@@ -1,6 +1,6 @@
 # Mystery Books Scraper
 
-This Python script scrapes the mystery books category from [Books to Scrape](https://books.toscrape.com) and extracts the following information for each book:
+This Python script scrapes the mystery books category from [Books to Scrape](https://books.toscrape.com) and extracts the following information for each book across **all pages**:
 
 * Title
 * Price
@@ -32,23 +32,30 @@ Run the script using Python:
 python scrape_mystery_books.py
 ```
 
+The script will automatically loop through all paginated pages in the Mystery category and scrape every book.
+
 Output example:
 
 ```
-📚 The Widow | 💰 Â£27.26 | 📦 In stock
+📚 In the Woods ||| 💰 £19.84 ||| 📦 In stock
 ==========================================================================================
-📚 Playing with Fire | 💰 Â£13.71 | 📦 In stock
+📚 The Silkworm ||| 💰 £23.88 ||| 📦 In stock
 ==========================================================================================
 ...
 ```
 
+## How It Works
+
+* The script starts from page 1 and dynamically builds the URL for subsequent pages.
+* It stops scraping when there are no more pages (HTTP 404).
+* Each book is contained in a `<li>` element with class `col-xs-6 col-sm-4 col-md-3 col-lg-3`.
+* The `strip()` method is used to clean up the availability text.
+
 ## Notes
 
-* The script scrapes only the first page of the Mystery category. You can modify it to loop through all pages if desired.
-* The `strip()` method is used to clean up the availability text.
-* Each book is contained in a `<li>` element with class `col-xs-6 col-sm-4 col-md-3 col-lg-3`.
+* This approach ensures all books in the Mystery category are scraped, regardless of the number of pages.
+* You can further modify the script to save the scraped data to CSV, JSON, or a database.
 
 ## License
 
 This project is open-source and free to use.
-
