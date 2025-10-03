@@ -37,9 +37,9 @@ The script will automatically loop through all paginated pages in the Mystery ca
 Output example:
 
 ```
-📚 In the Woods ||| 💰 £19.84 ||| 📦 In stock
+📚 Sharp Objects | 💰 Â£47.82 | 📦 In stock
 ==========================================================================================
-📚 The Silkworm ||| 💰 £23.88 ||| 📦 In stock
+📚 In a Dark, Dark Wood | 💰 Â£19.63 | 📦 In stock
 ==========================================================================================
 ...
 ```
